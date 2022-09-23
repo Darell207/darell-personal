@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>My Personal Website</title>
+        <link rel="stylesheet" href="mystyle.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    </head>
+    <body>
+        <header>
+            <nav>
+            <ul>
+                <li><a class="active" href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#images">Images</a></li>
+                <li><a href="#social">Social</a></li>
+            </ul>
+            </nav>
+        </header>
+        <main>
+            <section id="home">
+                <div class="section-inner">
+                    <img src="mypic.jpg" class="profile-img">
+                    <h1 class="h1">Aloha! Welcome to Darell's personal website.</h1>
+                </div>
+            </section>
+            <section id="about">
+                <div class="section-inner">
+                    <h2 class="h2">About me</h2>
+                    <p class="p" p style="font-family:initial">I am Darell Lucero 20 years old, born and raised here in Batangas City, currently taking Bachelor of Science in Information Tecnology major in Business analytics.</p>
+                    <h3 class="h3">Educational backgroud</h3>
+                    <p>Primary: Alangilan Central Elementary School</p>
+                    <p>Junior High School: Batangas National Highschool</p>
+                    <P>Senior High School: STI College Batangas</P>
+                    <p>College: Batangas State University</p>
+                    <h3>Hobbies</h3>
+                    <p>Basketball</p>
+                    <p>Movies/TV Series</p>
+                    <p>Travel</p>
+                </div>
+            </section>
+            <section id="images">
+                <div class="section-inner">
+                    <div class="slideshow-container">
+
+                        <div class="mySlides fade">
+                          <div class="numbertext"></div>
+                          <img src="img1.jpg" style="width:40%">
+                          <div class="text">Nature</div>
+                        </div>
+                        
+                        <div class="mySlides fade">
+                          <div class="numbertext"></div>
+                          <img src="img4.jpg" style="width:35%">
+                          <div class="text">Friends</div>
+                        </div>
+                        
+                        <div class="mySlides fade">
+                          <div class="numbertext"></div>
+                          <img src="img5.jpg" style="width:90%">
+                          <div class="text">Travel</div>
+                        </div>
+                        </div>
+                        
+                        <br>
+                        
+                        <div style="text-align:center">
+                          <span class="dot" onclick="currentSlide(1)"></span> 
+                          <span class="dot" onclick="currentSlide(2)"></span> 
+                          <span class="dot" onclick="currentSlide(3)"></span> 
+                        </div>
+                    <script>
+                        let slideIndex = 1;
+                        showSlides(slideIndex);
+                        
+                        function plusSlides(n) {
+                          showSlides(slideIndex += n);
+                        }
+                        
+                        function currentSlide(n) {
+                          showSlides(slideIndex = n);
+                        }
+                        
+                        function showSlides(n) {
+                          let i;
+                          let slides = document.getElementsByClassName("mySlides");
+                          let dots = document.getElementsByClassName("dot");
+                          if (n > slides.length) {slideIndex = 1}    
+                          if (n < 1) {slideIndex = slides.length}
+                          for (i = 0; i < slides.length; i++) {
+                            slides[i].style.display = "none";  
+                          }
+                          for (i = 0; i < dots.length; i++) {
+                            dots[i].className = dots[i].className.replace(" active", "");
+                          }
+                          slides[slideIndex-1].style.display = "block";  
+                          dots[slideIndex-1].className += " active";
+                        }
+                        </script>
+                </div>
+            </section>
+            <section id="social">
+              <div class="section-inner">
+                <h4 class="h4">If you want to know more about me, follow me on social media.</h4>
+                <a target="_blank" href="https://www.facebook.com/LuceroDarell/">
+                  <img class="fb_icon" src="logo-facebookpng-32202.png">
+                </a>
+                <a target="_blank" href="https://www.instagram.com/darellluceroooo/">
+                  <img class="ig_icon" src="logo-instagram-png-2429.png">
+                </a>
+                <a target="_blank" href="https://twitter.com/Daaaaaarell">
+                  <img class="tt_icon" src="logo-twitter-png-5860.png">
+                </a>
+
+              </div>
+            </section>
+        </main>
+    </body>
+</html>
